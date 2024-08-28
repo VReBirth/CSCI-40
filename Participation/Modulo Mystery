@@ -1,1 +1,24 @@
 
+#include <iostream>
+using namespace std;
+
+int main () 
+{
+   int x;
+   int mod3; //number left over after grouping into 3;
+   int mod5; //number left over after grouping into 5;
+   int mod7; //number left over afer grouping into 7;
+   
+   //Read in data
+   cin >> x;
+   
+   //do our caluclations
+   mod3 = x % 3;
+   mod5 = x % 5;
+   mod7 = x % 7;
+   
+   //output our results
+   cout << mod3 << " " << mod5 << " " << mod7 << endl;
+   
+   return 0;   
+}
