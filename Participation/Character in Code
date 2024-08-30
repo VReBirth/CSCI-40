@@ -1,0 +1,16 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+   char letter;
+   int asciiCode;
+   
+   cin >> letter;
+ 
+   asciiCode = static_cast<int>(letter);
+ 
+ cout << "Plaintext letter: " << letter << endl;
+ cout << "Plaintext letter ascii code: " << asciiCode << endl;
+ cout << "Plaintext letter number: " << endl;
+}
