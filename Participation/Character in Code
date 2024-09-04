@@ -12,5 +12,5 @@ int main()
  
  cout << "Plaintext letter: " << letter << endl;
  cout << "Plaintext letter ascii code: " << asciiCode << endl;
- cout << "Plaintext letter number: " << endl;
+ cout << "Plaintext letter number: " << letter - 64 << endl;
 }
