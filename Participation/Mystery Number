@@ -1,0 +1,49 @@
+/* Guess a random number :
+input seed for random number generator so the same random number is used.
+*/
+
+#include <iostream> // Input/output
+#include <cstdlib>  // includes the rand/srand
+
+using namespace std;  // simple naming
+
+//main is where it starts
+int main(){
+  int seed;
+  int randomNumber;
+  int guess;
+  const int START = 5;
+  const int STOP = 10;
+  
+  cout << "Input seed: ";
+  cin >> seed;
+  cout << "Seed Value: " << seed << endl;
+  srand(seed);
+  
+  /// ADD CODE HERE
+  /// Write code to generate a random number between Start and Stop inclusive. 
+  /// Assign  random number to variable: randomNumber
+  
+  
+  
+  //// End of new code
+
+  cout << "Enter guess between ";
+  cout << START;
+  cout << " and ";
+  cout << STOP;
+  cout << " w/ seed (" << seed << "): ";
+  cin >> guess;
+  cout << endl << "You guessed: " << guess << endl;
+
+  if (/* ADD CODE HERE ??? */){
+    cout << "Sorry!  Your guess was too low!" << endl;
+  }
+  else if (/* ADD CODE HERE ??? */){
+    cout << "Sorry! Your guess was too high!" << endl;
+  }
+  else {
+    cout << "CONGRATULATIONS!!! You guessed the right random number (" << randomNumber << ")!!!" <<endl;
+  }
+  return 0;
+}
