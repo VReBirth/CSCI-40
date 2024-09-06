@@ -24,7 +24,7 @@ int main(){
   /// Write code to generate a random number between Start and Stop inclusive. 
   /// Assign  random number to variable: randomNumber
   
-  
+  randomNumber = rand() % (10 + 1 - 5) + 5)  // ( max number + 1 - min number) + min number;
   
   //// End of new code
 
