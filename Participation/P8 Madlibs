@@ -1,0 +1,46 @@
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+int main(){
+  string madLib;
+  string myPlace;
+  string myAdjective;
+  string myAnimal;
+  string myVerb;
+
+  int startPos = 0;
+
+  cout << "Input your place: ";
+  cin >> myPlace;
+  cout << "Input your adjective: ";
+  cin >> myAdjective;
+  cout << "Input your animal: ";
+  cin >> myAnimal;
+  cout << "Input your verb: ";
+  cin >> myVerb;
+
+  madLib = "Today, I went to the [place] and saw a [animal].\n";
+  madLib = madLib + "It was so [adjective] that I [verb] all the way home!\n";
+
+// Replace Exclamation
+  startPos = madLib.find("[place]");
+  madLib.replace(startPos, 7, myPlace);
+
+  // ADD CODE: Replace Adjective
+  startPos = madLib.find("[adjective]");
+  madLib.replace(startPos, 11, myAdjective);
+
+  // ADD CODE: Replace Animal
+  startPos = madLib.find("[animal]");
+   madLib.replace(startPos, 8, myAnimal);
+
+  // ADD CODE Replace Verb
+  startPos = madLib.find("[verb]");
+   madLib.replace(startPos, 6, myVerb);
+
+  cout << endl << madLib;
+
+  return 0;
+}
