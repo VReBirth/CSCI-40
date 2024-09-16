@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() 
+{
+   int x, w; 
+   bool isPrime = true;
+   w = 2;
+
+   cin >> x;
+
+   while (x > w) // trying out multiple w's
+   {
+      if(x%w ==0 ) // w divides x evenly
+      {
+         isPrime = false;
+      }
+   w = w + 1;
+   }
+   
+   if (isPrime) // Print Prime 
+   {
+      cout << "PRIME" << endl;
+   }
+   else { // Prime Composite
+      cout << "COMPOSITE" << endl;
+   }
+   return 0;
+}
