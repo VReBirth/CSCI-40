@@ -1,0 +1,70 @@
+/* print deck of cards
+w/ FOR
+david ruby
+9.24.15
+*/
+
+#include <iostream>
+using namespace std;
+
+int main(){
+
+  int faceValue;
+  int suitValue;
+  int cardValue;
+  
+  /*cout << "Input Card Number (1 thru 52): " ;
+  cin >> cardValue;
+   
+  // Adjust card value to 0 thru 51
+  --cardValue; 
+  */
+  
+  cardValue = 0;
+  while (cardValue < 52)
+  {
+     // Calculate Face & Suit
+     faceValue = cardValue % 13;
+     suitValue = cardValue /13;
+     
+     // Print Face
+     if (faceValue < 8) {
+        cout << faceValue+2;
+     }
+     else if (faceValue == 8){
+        cout << "10";
+     }
+     else if (faceValue == 9){
+        cout << "Jack";
+     }
+     else if (faceValue == 10){
+        cout << "Queen";
+     }
+     else if (faceValue == 11){
+        cout << "King";
+     }
+     else if (faceValue == 12){
+        cout << "Ace";
+     }
+     cout << " of ";
+     
+     // Print Suit
+     switch (suitValue){
+      case 0:
+        cout << "Diamonds";
+        break;
+      case 1:
+        cout << "Spades";
+        break;
+      case 2:
+        cout << "Clubs";
+        break;
+      case 3:
+        cout << "Hearts";   
+        break;
+     }
+     cout << endl;
+     cardValue =  cardValue + 1;
+  }
+  return 0;
+}
