@@ -1,0 +1,48 @@
+// Put Smallest First
+#include <iostream>
+#include <vector>
+using namespace std;
+
+int main(){
+   vector<int> list(10);
+   int i, listSize;
+   int minPosition;
+   int temp;
+   listSize = list.size();
+   for (i=0; i<listSize; ++i) {
+      cin >> list.at(i);
+   }
+   
+   /////// Loop through list, find index of smallest item
+   /////// Assign index of smallest item to minPosition 
+   
+   minPosition = 0;
+   
+   for (i = 0; i < listSize; ++i)
+   {
+      if (list.at(i) < list.at(minPosition) ) // list.at(i) goes throught the vector to find the smallest #
+      {
+         minPosition = i;
+      }
+   }
+   
+   
+   //cout << "minPosition=" << minPosition << ", value=" << list.at(minPosition) << endl;
+   //////////////////////////////////////////////
+   /////////////////////////////////////////////
+   /// Swap the value at minPosition with position 0
+   
+   temp = list.at(0); // saving the value thats at vector 0
+      
+   list.at(0) = list.at(minPosition);
+   
+   list.at(minPosition) = temp; // this completes the swap 
+   
+   
+   /////////////////////////////////////////////////
+   for (i=0; i<listSize; ++i){
+      cout << list.at(i) << " ";
+   }
+   return 0;
+}
+   
