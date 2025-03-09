@@ -1,0 +1,183 @@
+#include <iostream>
+#include <cassert>
+using namespace std;
+
+// Node class represents a single element in the list
+class Node
+{
+private:
+    int data; // Data stored in node
+    Node* next; // Pointer to next node
+
+public:
+    Node(int d)
+    {
+        data = d;
+        next = nullptr;
+    }
+    int GetData() { return data; }
+    Node* GetNext() { return next; }
+    void SetData(int d) { data = d; }
+    void SetNext(Node* n) { next = n; }
+};
+
+// Singly Linked List class
+class SLL
+{
+private:
+    Node* head;
+    Node* tail;
+
+public:
+
+    // Constructor (for this lab you do not need an overload constructor)
+    SLL()
+    {
+        head = nullptr;
+        tail = nullptr;
+    }
+    
+    // Destructor
+    ~SLL()
+    {
+        Node* cur = head;
+        
+        while (cur)
+        {
+            Node* next = cur->GetNext();
+            delete cur;
+            cur = next;
+        }
+        head = nullptr;
+        tail = nullptr;
+        
+    }
+
+    // Append(int) - Adds a node at the end
+    void Append(int value) //O(1)
+    {
+        Node* newNode;
+    
+        if (head == nullptr)
+        {
+            newNode = head;
+            newNode = tail;
+            return;
+        }
+        else 
+        {
+           
+           tail = newNode;
+           return;
+        }
+    }
+
+    // Remove(int) - Deletes first occurrence of value
+    void Remove(int value) //O(n)
+    {
+        if (!head && !tail)
+        {
+            return;
+        }
+        else if (head)
+        {
+            Node* temp = head;
+            Node* next = head->GetNext();
+            delete temp;
+            head = next;
+        }
+        return;
+    }
+
+    // Search(int) - Returns pointer to first occurrence of value
+    Node* Search(int value) //O(n)
+    {
+        Node* check = head;
+        
+        while(check)
+        {
+            
+            if(check->GetData() == value)
+            {
+                break;
+            }
+            else
+            {
+                check = check->GetNext();
+            }
+            
+        }
+     //This line is only a placeholder
+    }
+
+    // PeekFront() - Returns value of first node
+    int PeekFront() //O(1)
+    {
+        
+         //This line is only a placeholder
+    }
+
+    // PeekBack() - Returns value of last node
+    int PeekBack() //O(1)
+    {
+        //This line is only a placeholder
+    }
+
+    // Size() - Returns number of nodes
+    int Size() //O(1)
+    {
+        Node* cur = head;
+        int count = 0;
+        
+        
+        while(cur)
+        {
+            count = count + 1;
+            cur = cur->GetNext();
+            
+        }
+        return count; //This line is only a placeholder
+    }
+
+    // Empty() - Checks if list is empty
+    bool Empty() //O(1)
+    {
+       return (head == nullptr);  //This line is only a placeholder
+    }
+
+    // Clear() - Deletes all nodes
+    void Clear() //O(n)
+    {
+        if(!head)
+        {
+            head = nullptr;
+            tail = nullptr;
+            return; 
+        }
+        
+        Node* cur = head;
+        
+        while (cur)
+        {
+            Node* next = cur->GetNext();
+            delete cur;
+            cur = next;
+        }
+        head = nullptr;
+        tail = nullptr;
+        
+    }
+
+
+    // Print() - Utility function to help you test.
+    void Print()
+    {
+        Node* cur = head;
+        while(cur)
+        {
+            cout << cur->GetData() << " -> ";
+            cur = cur->GetNext();
+        }
+        cout << "nullptr" << endl;
+    }
+};
